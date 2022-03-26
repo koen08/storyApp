@@ -1,7 +1,7 @@
 package com.koen.storyapp.app.di
 
 import com.koen.storyapp.app.di.annotation.ActivityScope
-import com.koen.storyapp.app.ui.MainActivity
+import com.koen.storyapp.app.ui.activity.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

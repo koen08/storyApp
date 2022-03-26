@@ -3,11 +3,10 @@ package com.koen.storyapp.app.di
 import androidx.fragment.app.FragmentManager
 import com.koen.storyapp.app.di.annotation.ActivityScope
 import com.koen.storyapp.app.ui.FragmentFactoryScoped
-import com.koen.storyapp.app.ui.MainActivity
+import com.koen.storyapp.app.ui.activity.MainActivity
 import com.koen.storyapp.app.ui.NavigationController
 import dagger.Module
 import dagger.Provides
-import javax.inject.Singleton
 
 @Module
 class FragmentManagerModule {

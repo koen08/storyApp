@@ -1,8 +1,9 @@
-package com.koen.storyapp.app.ui
+package com.koen.storyapp.app.ui.activity
 
 import android.os.Bundle
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
 import com.koen.storyapp.R
+import com.koen.storyapp.app.ui.NavigationController
 import com.koen.storyapp.app.ui.fragments.editor.EditorFragment
 import com.koen.storyapp.app.ui.fragments.profile.ProfileFragment
 import com.koen.storyapp.app.ui.fragments.tape.TapeFragment

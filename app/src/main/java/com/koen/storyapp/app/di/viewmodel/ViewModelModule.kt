@@ -5,19 +5,22 @@ import androidx.lifecycle.ViewModelProvider
 import com.koen.storyapp.app.di.annotation.ViewModelKey
 import com.koen.storyapp.app.ui.viewmodel.SplashViewModel
 import com.koen.storyapp.app.ui.viewmodel.ViewModelFactory
+import com.koen.storyapp.domain.usecase.JwtInitUseCase
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.multibindings.IntoMap
+import kotlinx.coroutines.Dispatchers
 import javax.inject.Singleton
 
 @Module
-abstract class ViewModelModule {
-    @Binds
-    abstract fun viewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory
-
-    @Binds
+class ViewModelModule {
+    @Provides
     @IntoMap
     @ViewModelKey(SplashViewModel::class)
     @Singleton
-    abstract fun mainViewModel(splashViewModel: SplashViewModel) : ViewModel
+    fun provideSplashViewModel(jwtInitUseCase: JwtInitUseCase): ViewModel = SplashViewModel(
+        jwtInitUseCase = jwtInitUseCase,
+        dispatcher = Dispatchers.Main
+    )
 }

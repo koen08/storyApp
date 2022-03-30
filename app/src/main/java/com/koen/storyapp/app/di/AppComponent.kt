@@ -1,8 +1,10 @@
 package com.koen.storyapp.app.di
 
 import android.app.Application
-import com.koen.storyapp.app.di.viewmodel.ViewModelControllerModule
+import com.koen.storyapp.app.di.modules.RetrofitModule
+import com.koen.storyapp.app.di.modules.UserModule
 import com.koen.storyapp.app.di.viewmodel.ViewModelModule
+import com.koen.storyapp.app.di.viewmodel.ViewModuleFactoryModule
 import com.koen.storyapp.app.ui.MainApplication
 import dagger.BindsInstance
 import dagger.Component
@@ -17,8 +19,10 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         ActivityModule::class,
         FragmentModule::class,
-        ViewModelControllerModule::class,
-        ViewModelModule::class
+        ViewModelModule::class,
+        RetrofitModule::class,
+        UserModule::class,
+        ViewModuleFactoryModule::class
     ]
 )
 interface AppComponent : AndroidInjector<MainApplication> {

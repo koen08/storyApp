@@ -8,9 +8,9 @@ import androidx.lifecycle.ViewModelStoreOwner
 import javax.inject.Inject
 
 class ViewModelController @Inject constructor(
-    private val viewModelFactory: ViewModelFactory
-) : IViewModelController {
-    override fun <T: ViewModel> injectViewModel(viewModelStoreOwner: ViewModelStoreOwner, klass: Class<T>): ViewModel {
-        return ViewModelProvider(viewModelStoreOwner, viewModelFactory).get(klass)
+    val viewModelFactory: ViewModelFactory
+) {
+    inline fun <reified T: ViewModel> injectViewModel(viewModelStoreOwner: ViewModelStoreOwner): T {
+        return ViewModelProvider(viewModelStoreOwner, viewModelFactory).get(T::class.java)
     }
 }
